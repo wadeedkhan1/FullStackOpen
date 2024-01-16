@@ -1,0 +1,21 @@
+-->|1. Enter Note| B(Write note in SPA text field)
+-->|2. Clicks Save| C{Check Authentication}
+-->|Authenticated| D[Create Note Object]
+-->|Not Authenticated| E[Show Login Page]
+--> F{Network Connection}
+-->|Connected| G[POST /api/notes to Server]
+-->|Success| H[Update SPA with New Note]
+-->|Error| I[Show Error to User]
+
+Explanation:
+
+The user enters a new note in the text field of the SPA.
+The user clicks the Save button.
+The SPA checks the user's authentication status.
+  If authenticated, it proceeds to create a new note object.
+  If not authenticated, it shows the login page.
+The SPA checks the network connection.
+  If connected, it sends a POST request to the server with the new note data.
+  If not connected, an error is shown to the user.
+On a successful server response, the SPA updates its interface with the new note.
+  If there's an error, it is shown to the user.
