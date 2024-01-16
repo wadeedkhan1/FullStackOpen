@@ -1,0 +1,21 @@
+1. Enters note| B(Write note in text field)
+2. Clicks Save| C{Client-side Validation}
+-->|Valid| D[Create Note Object]
+-->|Invalid| E[Show Validation Error]
+----> F{Network Connection}
+-->|Connected| G[POST /notes to Server]
+-->|Success| H[Update UI with New Note]
+-->|Error| I[Show Error to User]
+
+Explanation:
+
+1. The user writes a new note in the text field.
+2. The user clicks the Save button.
+3. Client-side validation checks if the input is valid.
+  If valid, a new note object is created.
+  If invalid, a validation error is shown.
+4. The client checks the network connection.
+  If connected, it sends a POST request to the server with the new note data.
+  If not connected, an error is shown to the user.
+5. On successful server response, the UI is updated with the new note.
+  If there's an error, it is shown to the user.
