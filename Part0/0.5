@@ -1,0 +1,21 @@
+[User] -->|1. Access SPA| (Load SPA)
+-->|2. SPA Initialization| {Check Authentication}
+-->|Authenticated| [Fetch Notes Data]
+-->|Not Authenticated| [Show Login Page]
+----> {Network Connection}
+-->|Connected| G[GET /api/notes from Server]
+---->|Success| H[Render Notes in SPA]
+-->|Error| I[Show Error to User]
+
+Explanation:
+
+The user accesses the SPA version of the notes app.
+The SPA is loaded, and its initialization phase begins.
+The SPA checks the user's authentication status.
+  If authenticated, it proceeds to fetch notes data.
+  If not authenticated, it shows the login page.
+The SPA checks the network connection.
+  If connected, it sends a GET request to the server for notes data.
+  If not connected, an error is shown to the user.
+On a successful server response, the SPA renders the notes.
+  If there's an error, it is shown to the user.
